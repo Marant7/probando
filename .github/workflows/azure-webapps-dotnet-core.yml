@@ -22,7 +22,7 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
       - name: Restaurar los paquetes
-        run: dotnet restore PROYECTOPDFVFINA
+        run: dotnet restore PROYECTOPDFVFINAL
       - name: Publicar la aplicación de manera local
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/publish
       - name: Subir el artefacto para el job de despliegue
