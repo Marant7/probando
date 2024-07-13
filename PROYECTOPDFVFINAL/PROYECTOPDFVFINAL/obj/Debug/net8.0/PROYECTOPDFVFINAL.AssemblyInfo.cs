@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PROYECTOPDFVFINAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ee3f2c4d650724b8fdc779bc2fb864ecb4ddb12")]
 [assembly: System.Reflection.AssemblyProductAttribute("PROYECTOPDFVFINAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PROYECTOPDFVFINAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
