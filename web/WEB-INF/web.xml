@@ -29,4 +29,10 @@
             30
         </session-timeout>
     </session-config>
+       <!-- Welcome file list -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>vista/login.jsp</welcome-file> <!-- Añade aquí tu archivo de login -->
+    </welcome-file-list>
 </web-app>
