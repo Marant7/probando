@@ -67,10 +67,10 @@ public class UsuarioControlador extends HttpServlet {
         }
         switch (action) {
             case "login":
-                request.getRequestDispatcher("vista/login.jsp").forward(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
                 break;
             case "register":
-                request.getRequestDispatcher("vista/register.jsp").forward(request, response);
+                request.getRequestDispatcher("register.jsp").forward(request, response);
                 break;
             case "logout":
                 HttpSession session = request.getSession();
@@ -78,7 +78,7 @@ public class UsuarioControlador extends HttpServlet {
                 response.sendRedirect("UsuarioControlador?action=login");
                 break;
             default:
-                request.getRequestDispatcher("vista/login.jsp").forward(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
                 break;
         }
     } 
@@ -108,7 +108,7 @@ public class UsuarioControlador extends HttpServlet {
                 iniciarSesion(request, response);
                 break;
             default:
-                request.getRequestDispatcher("vista/login.jsp").forward(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
                 break;
         }
     }
@@ -119,7 +119,7 @@ public class UsuarioControlador extends HttpServlet {
 
         if (contraseña == null || contraseña.isEmpty()) {
             request.setAttribute("error", "La contraseña no puede ser nula.");
-            request.getRequestDispatcher("vista/register.jsp").forward(request, response);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
             return;
         }
 
@@ -135,7 +135,7 @@ public class UsuarioControlador extends HttpServlet {
             response.sendRedirect("UsuarioControlador?action=login");
         } else {
             request.setAttribute("error", "Error al registrar usuario");
-            request.getRequestDispatcher("vista/register.jsp").forward(request, response);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         }
     }
 
@@ -169,10 +169,10 @@ public class UsuarioControlador extends HttpServlet {
             session.setAttribute("usuario", usuario);
             session.setAttribute("suscripcion", detalle.getTipoSuscripcion());
               session.setAttribute("detalle", detalle); // Asegúrate de agregar detalles a la sesión
-            response.sendRedirect("vista/home.jsp");
+            response.sendRedirect("home.jsp");
         } else {
             request.setAttribute("error", "Correo o contraseña incorrectos");
-            request.getRequestDispatcher("vista/login.jsp").forward(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 
