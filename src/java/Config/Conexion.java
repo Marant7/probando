@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexion {
-    private static final String URL = "jdbc:mysql:serverpdffinal.mysql.database.azure.com:3306/proyecto_pdf";
+    private static final String URL = "jdbc:mysql://serverpdffinal.mysql.database.azure.com:3306/proyecto_pdf";
     private static final String USER = "mario211";
     private static final String PASSWORD = "Afterlife123";
 
