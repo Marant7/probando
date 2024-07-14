@@ -7,9 +7,43 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="ProyectoPDF" default="default" basedir=".">
+<project name="ProyectoPDF" default="build" basedir=".">
     <description>Builds, tests, and runs the project ProyectoPDF.</description>
     <import file="nbproject/build-impl.xml"/>
+    
+    <!-- Inicializa las propiedades -->
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="war.file" value="${dist.dir}/ProyectoPDF.war"/>
+
+    <!-- Limpiar el directorio de construcción -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <!-- Compilar el código fuente -->
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}"/>
+    </target>
+
+    <!-- Empaquetar el archivo WAR -->
+    <target name="war" depends="compile">
+        <mkdir dir="${dist.dir}"/>
+        <war destfile="${war.file}" webxml="web/WEB-INF/web.xml">
+            <fileset dir="${classes.dir}"/>
+            <fileset dir="web"/>
+        </war>
+    </target>
+
+    <!-- Objetivo por defecto: construir todo -->
+    <target name="build" depends="clean, war">
+        <echo message="Construcción completa"/>
+    </target>
+    
     <!--
 
     There exist several targets which are by default empty and which can be 
@@ -25,7 +59,7 @@
       -pre-compile-test:         called before javac compilation of JUnit tests
       -post-compile-test:        called after javac compilation of JUnit tests
       -pre-compile-test-single:  called before javac compilation of single JUnit test
-      -post-compile-test-single: called after javac compilation of single JUunit test
+      -post-compile-test-single: called after javac compilation of single JUnit test
       -pre-dist:                 called before archive building 
       -post-dist:                called after archive building 
       -post-clean:               called after cleaning build products 
