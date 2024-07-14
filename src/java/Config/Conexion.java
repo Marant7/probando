@@ -1,25 +1,32 @@
-
 package Config;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 public class Conexion {
-    private static final String URL = "jdbc:mysql://serverpdffinal.mysql.database.azure.com:3306/proyecto_pdf";
-    private static final String USER = "mario211";
-    private static final String PASSWORD = "Afterlife123";
+    private DataSource dataSource;
+
+    public Conexion() {
+        try {
+            Context initContext = new InitialContext();
+            Context envContext = (Context) initContext.lookup("java:/comp/env");
+            dataSource = (DataSource) envContext.lookup("jdbc/YourDB");
+        } catch (NamingException e) {
+            e.printStackTrace();
+        }
+    }
 
     public Connection getConnection() {
-        Connection con = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("Conexión establecida correctamente a la base de datos.");
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Error al establecer la conexión a la base de datos: " + e.getMessage());
+            return dataSource.getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
         }
-        return con;
     }
 
     public void closeConnection(Connection con) {
