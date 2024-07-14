@@ -75,7 +75,7 @@ public class UsuarioControlador extends HttpServlet {
             case "logout":
                 HttpSession session = request.getSession();
                 session.invalidate();
-                response.sendRedirect("UsuarioControlador?action=login");
+                response.sendRedirect("login.jsp");
                 break;
             default:
                 request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -132,7 +132,7 @@ public class UsuarioControlador extends HttpServlet {
             // Crear una suscripción básica para el nuevo usuario
             DetalleSuscripcionUsuario detalle = new DetalleSuscripcionUsuario(usuario);
             detalleDao.agregar(detalle);
-            response.sendRedirect("UsuarioControlador?action=login");
+            response.sendRedirect("login.jsp");
         } else {
             request.setAttribute("error", "Error al registrar usuario");
             request.getRequestDispatcher("register.jsp").forward(request, response);

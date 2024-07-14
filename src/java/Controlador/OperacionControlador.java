@@ -76,7 +76,7 @@ public class OperacionControlador extends HttpServlet {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
 
         if (usuario == null) {
-            response.sendRedirect("UsuarioControlador?action=login");
+            response.sendRedirect("login.jsp");
             return;
         }
 
@@ -96,7 +96,7 @@ public class OperacionControlador extends HttpServlet {
                 request.getRequestDispatcher("vista/cortarPDF.jsp").forward(request, response);
                 break;
             default:
-                response.sendRedirect("UsuarioControlador?action=login");
+                response.sendRedirect("login.jsp");
                 break;
         }
     } 
@@ -116,7 +116,7 @@ public class OperacionControlador extends HttpServlet {
         Usuario usuario = (Usuario) session.getAttribute("usuario");
 
         if (usuario == null) {
-            response.sendRedirect("UsuarioControlador?action=login");
+            response.sendRedirect("login.jsp");
             return;
         }
 
@@ -132,7 +132,7 @@ public class OperacionControlador extends HttpServlet {
      private void manejarFusionarPDF(HttpServletRequest request, HttpServletResponse response, Usuario usuario) throws ServletException, IOException {
         DetalleSuscripcionUsuario detalle = detalleDao.obtenerPorUsuario(usuario.getId());
         if (detalle == null) {
-            response.sendRedirect("UsuarioControlador?action=login");
+            response.sendRedirect("login.jsp");
             return;
         }
 
@@ -216,7 +216,7 @@ public class OperacionControlador extends HttpServlet {
      private void manejarCortarPDF(HttpServletRequest request, HttpServletResponse response, Usuario usuario) throws ServletException, IOException {
     DetalleSuscripcionUsuario detalle = detalleDao.obtenerPorUsuario(usuario.getId());
         if (detalle == null) {
-            response.sendRedirect("UsuarioControlador?action=login");
+            response.sendRedirect("login.jsp");
             return;
         }
 

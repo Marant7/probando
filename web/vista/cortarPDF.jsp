@@ -107,7 +107,7 @@
                 </form>
             </c:otherwise>
         </c:choose>
-        <a href="${pageContext.request.contextPath}/OperacionControlador?action=operaciones">Volver a Operaciones</a>
+        <a href="operaciones.jsp">Volver a Operaciones</a>
     </div>
 </body>
 </html>

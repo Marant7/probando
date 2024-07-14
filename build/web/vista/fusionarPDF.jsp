@@ -96,7 +96,7 @@
         <c:if test="${not empty archivoFusionado}">
             <p>Archivo fusionado: <a href="${pageContext.request.contextPath}/${archivoFusionado}" download>Descargar PDF Fusionado</a></p>
         </c:if>
-        <a href="${pageContext.request.contextPath}/OperacionControlador?action=operaciones">Volver a Operaciones</a>
+        <a href="operaciones.jsp">Volver a Operaciones</a>
     </div>
 </body>
 </html>

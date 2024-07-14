@@ -85,7 +85,7 @@
                 <input type="submit" value="Iniciar Sesión">
             </div>
         </form>
-        <a href="${pageContext.request.contextPath}/UsuarioControlador?action=register">Registrarse</a>
+        <a href="register.jsp">Registrarse</a>
         <c:if test="${not empty error}">
             <p class="error">${error}</p>
         </c:if>

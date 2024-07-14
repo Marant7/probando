@@ -189,7 +189,7 @@ public class DetalleSuscripcionUsuarioControlador extends HttpServlet {
             session.setAttribute("suscripcion", detalle.getTipoSuscripcion());
             response.sendRedirect("vista/home.jsp");
         } else {
-            response.sendRedirect("UsuarioControlador?action=login");
+            response.sendRedirect("login.jsp");
         }
     }
       private void prepararCompra(HttpServletRequest request, HttpServletResponse response)

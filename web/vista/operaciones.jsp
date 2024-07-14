@@ -77,10 +77,10 @@
             <p class="mensaje">${mensaje}</p>
         </c:if>
         <ul>
-            <li><a href="${pageContext.request.contextPath}/OperacionControlador?action=fusionarPDF">Fusionar PDF</a></li>
-            <li><a href="${pageContext.request.contextPath}/OperacionControlador?action=cortarPDF">Cortar PDF</a></li>
+            <li><a href="fusionarPDF.jsp">Fusionar PDF</a></li>
+            <li><a href="cortarPDF.jsp">Cortar PDF</a></li>
         </ul>
-        <a href="${pageContext.request.contextPath}/UsuarioControlador?action=logout">Cerrar Sesión</a>
+        <a href="../login.jsp">Cerrar Sesión</a>
     </div>
 </body>
 </html>

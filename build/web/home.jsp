@@ -75,9 +75,9 @@
             <p>Operaciones realizadas: ${detalle.operacionesRealizadas} / 5</p>
         </c:if>
         <div class="button-container">
-            <a href="${pageContext.request.contextPath}/OperacionControlador?action=operaciones">Operaciones PDF</a>
-            <a href="${pageContext.request.contextPath}/DetalleSuscripcionUsuarioControlador?action=comprar">Comprar Suscripción Premium</a>
-            <a href="${pageContext.request.contextPath}/UsuarioControlador?action=logout">Cerrar Sesión</a>
+            <a href="vista/operaciones.jsp">Operaciones PDF</a>
+            <a href="vista/comprarSuscripcion.jsp">Comprar Suscripción Premium</a>
+            <a href="login.jsp">Cerrar Sesión</a>
         </div>
         <c:if test="${not empty error}">
             <p class="error">${error}</p>
